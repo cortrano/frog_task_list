@@ -12,7 +12,7 @@
 ## Требования
 - Flutter SDK: >=3.0.0 <4.0.0
 - Dart: >=3.0.0 <4.0.0
-- Бэкенд: [Dart Frog ToDo Backend](#) (см. инструкции ниже)
+- Бэкенд: [Frog Task List Backend](https://github.com/cortrano/frog_task_list_backend) (см. инструкции ниже)
 - Устройство или эмулятор для запуска
 
 ## Установка
