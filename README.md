@@ -20,7 +20,7 @@
 1. **Клонируйте репозиторий**:
    ```bash
    git clone <repository-url>
-   cd flutter_mvvm_riverpod_clean
+   cd frog_task_list
    ```
 
 2. **Установите зависимости**:
@@ -47,7 +47,7 @@
 
 ## Структура проекта
 ```
-/flutter_mvvm_riverpod_clean
+/frog_task_list
   /lib
     /core           # Общие утилиты (ApiClient, ошибки, хранилище)
     /module
