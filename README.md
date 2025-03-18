@@ -1,16 +1,65 @@
-# frog_task_list
+# Frog Task List
 
-A new Flutter project.
+Простое приложение для управления списком задач (ToDo), построенное на Flutter с использованием архитектуры MVVM, Riverpod для управления состоянием и GoRouter для навигации. Поддерживает авторизацию, регистрацию и работу с задачами через REST API.
 
-## Getting Started
+## Особенности
+- Регистрация и вход пользователей.
+- Создание, просмотр и удаление задач.
+- Локальное кэширование данных с использованием Hive.
+- Обработка ошибок (например, истёкший токен, проблемы с сетью).
+- Чистая архитектура с разделением на слои (data, domain, presentation).
 
-This project is a starting point for a Flutter application.
+## Требования
+- Flutter SDK: >=3.0.0 <4.0.0
+- Dart: >=3.0.0 <4.0.0
+- Бэкенд: [Dart Frog ToDo Backend](#) (см. инструкции ниже)
+- Устройство или эмулятор для запуска
 
-A few resources to get you started if this is your first Flutter project:
+## Установка
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. **Клонируйте репозиторий**:
+   ```bash
+   git clone <repository-url>
+   cd flutter_mvvm_riverpod_clean
+   ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. **Установите зависимости**:
+   ```bash
+   flutter pub get
+   ```
+
+3. **Настройте подключение к бэкенду**:
+   - Откройте `lib/core/network/api_client.dart`.
+   - Убедитесь, что `_baseUrl` соответствует адресу бэкенда:
+     - Для эмулятора: `http://localhost:8080`.
+     - Для физического устройства: замените `localhost` на IP-адрес хоста (например, `http://192.168.1.x:8080`).
+
+## Запуск
+
+1. **Запустите бэкенд**:
+   - Убедитесь, что бэкенд (Dart Frog) работает на `http://localhost:8080` (см. инструкции в README бэкенда).
+
+2. **Запустите приложение**:
+   ```bash
+   flutter run
+   ```
+   - Для подробных логов используйте: `flutter run -v`.
+
+## Структура проекта
+```
+/flutter_mvvm_riverpod_clean
+  /lib
+    /core           # Общие утилиты (ApiClient, ошибки, хранилище)
+    /module
+      /auth         # Логика авторизации (модели, API, ViewModel)
+      /todo         # Логика задач (модели, API, ViewModel)
+    /presentation   # Маршруты и провайдеры
+    /shared         # Общие виджеты
+```
+
+## Зависимости
+- `flutter_riverpod`: Управление состоянием.
+- `go_router`: Навигация.
+- `http`: HTTP-запросы.
+- `hive`: Локальное хранилище.
+- `freezed`: Генерация моделей.
